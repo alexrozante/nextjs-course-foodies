@@ -1,24 +1,8 @@
 import ImagePicker from '@/components/meals/image-picker';
 import classes from './page.module.css';
+import { shareMeal } from '@/lib/actions';
 
 export default function ShareMealPage() {
-  // Ao adicionar 'user server' estamos criando uma 'server action'
-  // Uma função que só executa no servidor
-  // Uma server action them que ser async
-  // Esta é uma feature do React, que requer um framwork como o Next.js
-  async function shareMeal(formData) {
-    'use server';
-    const mealData = {
-      creator: formData.get('name'),
-      creator_email: formData.get('email'),
-      title: formData.get('title'),
-      summary: formData.get('summary'),
-      instructions: formData.get('instructions'),
-      image: formData.get('image'),
-    };
-    console.log(mealData);
-  }
-
   return (
     <>
       <header className={classes.header}>
